@@ -1,22 +1,17 @@
-# Provenance
+# Historique du projet
 
-- Dépôt pédagogique d’origine : `GLO-2003-eq17/GLO-2003-SplitUL`.
-- Révision source : `b37baf4df6655067271e9e49680fed5c9e0c5145`.
-- Copie portfolio préparée le 6 octobre 2026 à la demande de Juan José Castilla Manrique.
-- Les anciens noms Git JuanAstroDev et The_OnlyJuanDev correspondent au compte OneCosmicDev.
+## Repères chronologiques
 
-## Attribution
+Le dépôt d’équipe a été créé le **23 janvier 2025**, date du commit initial `1387ee3`. Ma première contribution enregistrée date du **3 février 2025** : l’intégration de Checkstyle (`b90b8a3`). Les dates sont présentées à l’heure du Québec.
 
-Les [contributions et crédits](CONTRIBUTIONS.md) décrivent le périmètre de Juan, les membres identifiés et le matériel fourni. L’auteur du commit initial de cette copie est responsable de sa préparation ; il ne revendique pas l’écriture de l’ensemble du code. Les auteurs du travail source conservent leurs crédits.
+## Dépôt d’origine
 
-## Adaptations pour la publication
+J’ai réalisé ce travail dans `GLO-2003-eq17/GLO-2003-SplitUL`. La version publique reprend la révision `b37baf4df6655067271e9e49680fed5c9e0c5145` du projet scolaire. Je l’ai mise en ligne sur mon compte personnel le **6 octobre 2026** pour présenter mon travail.
 
-L’historique privé n’a pas été importé. Les configurations locales d’IDE, remises et documents d’évaluation, archives binaires et anciens workflows de déploiement ne sont pas publiés. Les notices de licence et les mentions d’auteur des sources conservées sont maintenues. Les exemples de configuration n’incluent pas d’identifiants de services réels.
+Mes anciens noms Git, JuanAstroDev et The_OnlyJuanDev, correspondent à mon compte [OneCosmicDev](https://github.com/OneCosmicDev).
 
-La licence MIT du dépôt source est conservée dans [LICENSE](LICENSE).
+## Version publique
 
-## Points d’entrée dans le code
+J’ai regroupé dans ce dépôt le code utile pour comprendre et lancer le projet, mes contributions et les crédits du cours. Je conserve l’historique scolaire séparément. Les documents de remise, les configurations propres à mon environnement et les archives de déploiement ne font pas partie de cette version.
 
-- [src/main/java/ca/ulaval/glo2003/domain/GroupConverter.java](src/main/java/ca/ulaval/glo2003/domain/GroupConverter.java)
-- [src/main/java/ca/ulaval/glo2003/domain/split/CustomSplitStrategy.java](src/main/java/ca/ulaval/glo2003/domain/split/CustomSplitStrategy.java)
-
+Je conserve la [licence MIT d’origine](LICENSE) et les mentions d’auteur du projet.

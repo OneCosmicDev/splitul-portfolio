@@ -1,21 +1,30 @@
-# SplitUL — contribution et crédits
+# Mes contributions — SplitUL
 
-SplitUL est une API de gestion des dépenses partagées, développée par l'équipe 17 du cours GLO-2003 à l'Université Laval. Elle permet de gérer des groupes, leurs membres, leurs dépenses et les dettes associées.
+J’ai principalement travaillé sur les calculs de répartition et sur leur exposition dans l’API.
 
-## Ma contribution — Juan José Castilla Manrique
+- J’ai implémenté un algorithme glouton qui transforme les soldes nets en dettes entre paires de membres.
+- J’ai ajouté l’historique des dépenses d’un groupe, avec son tri, son DTO et ses contrôles d’appartenance.
+- J’ai centralisé les contrôles d’accès reposant sur l’en-tête de membre et corrigé le comportement de suppression des groupes.
+- J’ai développé des stratégies de partage, leur validation et les tests associés.
+- J’ai intégré OWASP Dependency-Check dans Maven et le workflow d’intégration continue du projet.
 
-J'ai contribué à la répartition des dépenses et des dettes, aux contrôles d'accès de l'API et à la vérification des dépendances.
+## Repères dans le code
 
-- **Répartition des dettes entre membres** : implémentation d'un algorithme glouton convertissant les soldes nets en dettes entre paires de membres, dans la couche de conversion vers les DTO. [PR #36](https://github.com/GLO-2003-eq17/GLO-2003-SplitUL/pull/36).
-- **Historique des dépenses** : ajout de l'endpoint de consultation, de son DTO, du tri et des contrôles d'appartenance au groupe, avec des tests. [PR #59](https://github.com/GLO-2003-eq17/GLO-2003-SplitUL/pull/59).
-- **Filtrage des accès** : centralisation des contrôles utilisant l'en-tête de membre et correction de la suppression des groupes, avec adaptation des tests. [PR #60](https://github.com/GLO-2003-eq17/GLO-2003-SplitUL/pull/60).
-- **Stratégies de partage** : implémentation de stratégies de répartition, de pourcentages personnalisés et de leur validation, avec les tests associés. [PR #81](https://github.com/GLO-2003-eq17/GLO-2003-SplitUL/pull/81).
-- **Analyse des dépendances** : intégration d'OWASP Dependency-Check dans Maven et le workflow CI. [PR #84](https://github.com/GLO-2003-eq17/GLO-2003-SplitUL/pull/84).
+- [src/main/java/ca/ulaval/glo2003/domain/GroupConverter.java](src/main/java/ca/ulaval/glo2003/domain/GroupConverter.java)
+- [src/main/java/ca/ulaval/glo2003/domain/split/CustomSplitStrategy.java](src/main/java/ca/ulaval/glo2003/domain/split/CustomSplitStrategy.java)
 
-## Équipe et crédits
+## Références de mon travail
 
-L'équipe indiquée dans le README source réunit Victoria Pelletier Cantin, Yan Tremblay, Dania Mahfoud, Alissa Audet et Juan José Castilla Manrique.
+Je conserve ci-dessous les références de mes contributions. Elles renvoient aux dépôts de cours ; leur consultation peut demander un accès. Les liens vers les fichiers ci-dessus sont accessibles dans ce dépôt public.
 
-Comptes contributeurs identifiés : [VictoriaaPc](https://github.com/VictoriaaPc), [Yurhuval](https://github.com/Yurhuval), [mhfdania](https://github.com/mhfdania), [AlissaAudet](https://github.com/AlissaAudet) et [OneCosmicDev](https://github.com/OneCosmicDev).
+- [PR #36](https://github.com/GLO-2003-eq17/GLO-2003-SplitUL/pull/36)
+- [PR #59](https://github.com/GLO-2003-eq17/GLO-2003-SplitUL/pull/59)
+- [PR #60](https://github.com/GLO-2003-eq17/GLO-2003-SplitUL/pull/60)
+- [PR #81](https://github.com/GLO-2003-eq17/GLO-2003-SplitUL/pull/81)
+- [PR #84](https://github.com/GLO-2003-eq17/GLO-2003-SplitUL/pull/84)
 
-Le projet s'inscrit dans le cadre pédagogique du cours GLO-2003. Le fichier LICENSE et les mentions d'origine du dépôt doivent être conservés lors de sa redistribution. Les contributions décrites ci-dessus ne m'attribuent pas l'ensemble de l'API ni les contributions des autres membres.
+## Mon équipe
+
+J’ai réalisé ce projet avec Victoria Pelletier Cantin, Yan Tremblay, Dania Mahfoud et Alissa Audet. Les fonctionnalités présentées résultent de notre travail collectif dans le cadre du cours GLO-2003.
+
+Je conserve la [licence MIT du projet](LICENSE) et les mentions d’auteur d’origine.

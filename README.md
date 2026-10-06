@@ -1,33 +1,42 @@
-# splitul
+# SplitUL — Gestion de dépenses partagées
 
-API de gestion des dépenses partagées et des dettes entre membres d’un groupe.
+J’ai participé au développement de SplitUL avec l’équipe 17 du cours GLO-2003 à l’Université Laval. Nous avons construit une API pour gérer les dépenses d’un groupe et représenter ce que chaque membre doit aux autres.
 
-**Java 21 · Jersey · Maven · JUnit · Mockito**
+**Université Laval · GLO-2003 · Hiver 2025**
 
-Copie portfolio d’un projet scolaire de Juan José Castilla Manrique ([OneCosmicDev](https://github.com/OneCosmicDev)). Les contributions de l’équipe et le matériel fourni par le cours sont crédités ci-dessous.
+**Début documenté : 23 janvier 2025** — [repères chronologiques](PROVENANCE.md#repères-chronologiques)
 
-## Ma contribution — Juan José Castilla Manrique
+**Technologies : Java 21 · Jersey · Maven · JUnit · Mockito · MongoDB**
 
-J'ai contribué à la répartition des dépenses et des dettes, aux contrôles d'accès de l'API et à la vérification des dépendances.
+## Ce que fait le projet
 
-- **Répartition des dettes entre membres** : implémentation d'un algorithme glouton convertissant les soldes nets en dettes entre paires de membres, dans la couche de conversion vers les DTO. [PR #36](https://github.com/GLO-2003-eq17/GLO-2003-SplitUL/pull/36).
-- **Historique des dépenses** : ajout de l'endpoint de consultation, de son DTO, du tri et des contrôles d'appartenance au groupe, avec des tests. [PR #59](https://github.com/GLO-2003-eq17/GLO-2003-SplitUL/pull/59).
-- **Filtrage des accès** : centralisation des contrôles utilisant l'en-tête de membre et correction de la suppression des groupes, avec adaptation des tests. [PR #60](https://github.com/GLO-2003-eq17/GLO-2003-SplitUL/pull/60).
-- **Stratégies de partage** : implémentation de stratégies de répartition, de pourcentages personnalisés et de leur validation, avec les tests associés. [PR #81](https://github.com/GLO-2003-eq17/GLO-2003-SplitUL/pull/81).
-- **Analyse des dépendances** : intégration d'OWASP Dependency-Check dans Maven et le workflow CI. [PR #84](https://github.com/GLO-2003-eq17/GLO-2003-SplitUL/pull/84).
+SplitUL permet de créer des groupes, d’ajouter des membres, d’enregistrer des dépenses et de consulter leur historique. L’API calcule les dettes selon différentes règles de répartition, notamment un partage égal ou des pourcentages personnalisés. Le projet sépare les routes de l’API, les règles métier et la persistance, avec une implémentation en mémoire et une autre utilisant MongoDB.
 
-## Équipe et crédits
+## Ma contribution
 
-L'équipe indiquée dans le README source réunit Victoria Pelletier Cantin, Yan Tremblay, Dania Mahfoud, Alissa Audet et Juan José Castilla Manrique.
+J’ai principalement travaillé sur les calculs de répartition et sur leur exposition dans l’API.
 
-Comptes contributeurs identifiés : [VictoriaaPc](https://github.com/VictoriaaPc), [Yurhuval](https://github.com/Yurhuval), [mhfdania](https://github.com/mhfdania), [AlissaAudet](https://github.com/AlissaAudet) et [OneCosmicDev](https://github.com/OneCosmicDev).
+- J’ai implémenté un algorithme glouton qui transforme les soldes nets en dettes entre paires de membres.
+- J’ai ajouté l’historique des dépenses d’un groupe, avec son tri, son DTO et ses contrôles d’appartenance.
+- J’ai centralisé les contrôles d’accès reposant sur l’en-tête de membre et corrigé le comportement de suppression des groupes.
+- J’ai développé des stratégies de partage, leur validation et les tests associés.
+- J’ai intégré OWASP Dependency-Check dans Maven et le workflow d’intégration continue du projet.
 
-Le projet s'inscrit dans le cadre pédagogique du cours GLO-2003. Le fichier LICENSE et les mentions d'origine du dépôt doivent être conservés lors de sa redistribution. Les contributions décrites ci-dessus ne m'attribuent pas l'ensemble de l'API ni les contributions des autres membres.
+Je détaille les fichiers et les références de mon travail dans [CONTRIBUTIONS.md](CONTRIBUTIONS.md).
 
+## Ce que j’ai appris
 
-Les références de PR et de commits pointent vers les dépôts pédagogiques d’origine, dont l’accès peut être restreint. La présente copie possède son propre historique de publication.
+J’ai appris à traduire une règle métier en un modèle explicite et testable. Une dépense partagée ne se résume pas à une division : il faut gérer les membres concernés, les pourcentages, les soldes et les erreurs de validation. L’algorithme de répartition m’a amené à distinguer le solde net d’un membre des dettes présentées par l’API.
 
-## Démarrer le projet
+J’ai aussi renforcé ma compréhension de la séparation entre domaine et DTO. Le domaine porte les règles, tandis que les objets de transfert exposent les informations attendues par le client. Les tests et les outils Maven m’ont permis de vérifier ces comportements et d’intégrer des contrôles de qualité dans le travail d’équipe.
+
+## Mon équipe
+
+J’ai réalisé ce projet avec Victoria Pelletier Cantin, Yan Tremblay, Dania Mahfoud et Alissa Audet. Les fonctionnalités présentées résultent de notre travail collectif dans le cadre du cours GLO-2003.
+
+Je conserve la [licence MIT du projet](LICENSE) et les mentions d’auteur d’origine.
+
+## Lancer le projet
 
 Prérequis : Java 21 et Maven 3.
 
@@ -44,10 +53,6 @@ mvn test
 
 Le projet conserve ses outils Maven de qualité issus du cours. Les analyses de dépendances et les tests nécessitant un service externe peuvent demander une configuration supplémentaire.
 
-## État de cette publication
+## État du projet
 
-Cette version présente le travail scolaire et ses limites. Elle ne correspond pas à un service hébergé ni à un engagement de maintenance. Voir [PROVENANCE.md](PROVENANCE.md) pour la source, les adaptations de publication et les références vers le code.
-
-## Vérifications du 6 octobre 2026
-
-Compilation et 136 tests réussis. Les 9 tests MongoDB restants ne peuvent pas démarrer sans environnement Docker disponible pour Testcontainers ; la suite complète n’est donc pas déclarée verte.
+Les **136 tests exécutables sans Docker passent**. Les **9 tests MongoDB** nécessitent Docker et restent à revalider avec Testcontainers.
