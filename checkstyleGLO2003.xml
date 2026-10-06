@@ -1,0 +1,96 @@
+<!DOCTYPE module PUBLIC
+        "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+        "https://checkstyle.org/dtds/configuration_1_3.dtd">
+
+<module name="Checker">
+  <!-- Global severity level (error, warning, etc.) -->
+  <property name="severity" value="error" />
+
+  <!-- Disallow multiple consecutive blank lines -->
+  <!-- RegexpMultiline must be at top-level, NOT under TreeWalker -->
+  <module name="RegexpMultiline">
+    <!-- Pattern: Look for 2 or more consecutive newlines -->
+    <property name="format" value="(\r?\n\s*){3,}"/>
+    <message key="name.invalidPattern"
+             value="Multiple consecutive blank lines are not allowed."/>
+  </module>
+
+  <!-- Disallow comments unless they contain http:// or https://, ignoring strings -->
+  <module name="RegexpMultiline">
+    <property name="format" value="^\s*(//.*|/\*[\s\S]*?\*/)(?!(.*(http://|https://).*))$"/>
+    <property name="message" value="No comments allowed unless they contain http:// or https://"/>
+  </module>
+
+  <module name="TreeWalker">
+
+    <!-- Local variables in lowerCamelCase -->
+    <module name="LocalVariableName">
+      <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+      <message key="name.invalidPattern"
+               value="The local variable name ''{0}'' must adhere to the lowerCamelCase convention (e.g., myVariable). (Regex: ''{1}'')" />
+    </module>
+
+    <!-- Instance fields (members) in lowerCamelCase -->
+    <module name="MemberName">
+      <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+      <message key="name.invalidPattern"
+               value="The attribute name ''{0}'' must adhere to the lowerCamelCase convention. (Regex: ''{1}'')" />
+    </module>
+
+    <!-- Method parameters in lowerCamelCase -->
+    <module name="ParameterName">
+      <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+      <message key="name.invalidPattern"
+               value="The parameter name ''{0}'' must adhere to the lowerCamelCase convention (e.g., myParam). (Regex: ''{1}'')" />
+    </module>
+
+    <!-- Catch block parameters in lowerCamelCase -->
+    <module name="CatchParameterName">
+      <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+      <message key="name.invalidPattern"
+               value="The exception variable name ''{0}'' must adhere to the lowerCamelCase convention (e.g., e). (Regex: ''{1}'')" />
+    </module>
+
+    <!-- Method names in lowerCamelCase -->
+    <module name="MethodName">
+      <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
+      <message key="methodName.invalidPattern"
+               value="The method name ''{0}'' must adhere to the lowerCamelCase convention (e.g., myMethod). (Regex: ''{1}'')" />
+    </module>
+
+    <!-- Class (and interface) names in UpperCamelCase -->
+    <module name="TypeName">
+      <property name="format" value="^[A-Z][a-z0-9]+(?:[A-Z][a-z0-9]+)*(?:[A-Z]+)?$"/>
+      <message key="name.invalidPattern"
+               value="The class name ''{0}'' must adhere to the UpperCamelCase convention (e.g., MyExampleClass). (Regex: ''{1}'')" />
+    </module>
+
+    <!-- Enforce Braces Around Single-Statement Blocks -->
+    <module name="NeedBraces">
+      <!-- Example of overriding the default message for missing braces -->
+      <!-- 'block.noBraces' is the message key used by NeedBraces when braces are absent. -->
+      <message key="block.noBraces"
+               value="Braces are required. Please add '{' and '}' around this statement." />
+
+      <!-- 'block.singleStatement' is another key for a single-line statement that needs braces -->
+      <message key="block.singleStatement"
+               value="Only one statement detected, but braces are still required for clarity." />
+    </module>
+
+    <!-- Enforce 4-Space Indentation -->
+    <module name="Indentation">
+      <!-- How many spaces to indent for each new block or nesting level -->
+      <property name="basicOffset" value="4"/>
+      <!-- No extra indentation for braces themselves -->
+      <property name="braceAdjustment" value="0"/>
+      <!-- How far 'case' labels should be indented from the switch block -->
+      <property name="caseIndent" value="4"/>
+      <!-- Treat a tab character as 4 spaces (if tabs appear) -->
+      <property name="tabWidth" value="4"/>
+
+      <!-- Example of customizing one of Indentation's message keys. -->
+      <message key="indentation.child.error"
+               value="Incorrect indentation. Expected {1} spaces but found {2}. Please align properly." />
+    </module>
+  </module>
+</module>

@@ -1,0 +1,97 @@
+#intellij file
+.idea/
+*.iml
+
+# Compiled class files
+*.class
+target/
+build/
+
+# Log files
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.iml
+
+# Virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+replay_pid*
+
+# User-specific IDE configurations
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+
+# AWS user-specific files
+.idea/**/aws.xml
+
+# Generated files
+.idea/**/contentModel.xml
+
+# Sensitive or high-churn files
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+
+# Gradle-specific files
+.gradle/
+.gradle-cache/
+.idea/**/gradle.xml
+.idea/**/libraries
+
+# Maven-specific files
+.mvn/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# OS-specific system files
+.DS_Store
+Thumbs.db
+
+# Secrets and environment variables
+.env
+config/secrets.yml
+secrets.json
+
+# Inspired by https://github.com/github/gitignore/blob/main/Java.gitignore
+.idea/misc.xml
+
+# Local files excluded from the public portfolio
+.env
+.env.*
+!.env.example
+!env.example
+node_modules/
+target/
+dist/
+build/
+.next/
+coverage/
+*.zip
+*.log
+.DS_Store
+
+*.tsbuildinfo
+!**/package-lock.json
